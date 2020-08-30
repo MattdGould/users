@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserResponseDto {
+public class UserFileDto {
 
     private int id;
 
@@ -81,15 +81,15 @@ public class UserResponseDto {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof UserResponseDto)) return false;
-        UserResponseDto userResponseDto = (UserResponseDto) o;
-        return getId() == userResponseDto.getId() &&
-                Objects.equals(getFirstName(), userResponseDto.getFirstName()) &&
-                Objects.equals(getLastName(), userResponseDto.getLastName()) &&
-                Objects.equals(getEmail(), userResponseDto.getEmail()) &&
-                Objects.equals(getIpAddress(), userResponseDto.getIpAddress()) &&
-                Objects.equals(getLatitude(), userResponseDto.getLatitude()) &&
-                Objects.equals(getLongitude(), userResponseDto.getLongitude());
+        if (!(o instanceof UserFileDto)) return false;
+        UserFileDto userFileDto = (UserFileDto) o;
+        return getId() == userFileDto.getId() &&
+                Objects.equals(getFirstName(), userFileDto.getFirstName()) &&
+                Objects.equals(getLastName(), userFileDto.getLastName()) &&
+                Objects.equals(getEmail(), userFileDto.getEmail()) &&
+                Objects.equals(getIpAddress(), userFileDto.getIpAddress()) &&
+                Objects.equals(getLatitude(), userFileDto.getLatitude()) &&
+                Objects.equals(getLongitude(), userFileDto.getLongitude());
     }
 
     @Override
