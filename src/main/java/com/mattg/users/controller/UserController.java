@@ -28,6 +28,15 @@ public class UserController {
     @Autowired
     private UserApiResultsService userApiResultsService;
 
+    @Autowired
+    private FileService fileService;
+
+    @Autowired
+    private UserFileDtoToUserEntityMapper mapper;
+
+    @Autowired
+    private UserRepository userRepository;
+
     @Operation(summary = "Finds all users")
     @GetMapping(value = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<UserApiResponseDto> getAllUsers() {
@@ -45,15 +54,6 @@ public class UserController {
         LOGGER.info("Users with id " + id);
         return responseDto;
     }
-
-    @Autowired
-    private FileService fileService;
-
-    @Autowired
-    private UserFileDtoToUserEntityMapper mapper;
-
-    @Autowired
-    private UserRepository userRepository;
 
     @Operation(summary = "LoadsData")
     @GetMapping(value = "/load", produces = MediaType.APPLICATION_JSON_VALUE)
