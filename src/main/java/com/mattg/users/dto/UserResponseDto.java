@@ -8,7 +8,7 @@ import java.util.Objects;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserResponseDto {
 
-    private int id;
+    private long id;
 
     @JsonProperty("first_name")
     private String firstName;
@@ -22,11 +22,11 @@ public class UserResponseDto {
     private Double latitude;
     private Double longitude;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

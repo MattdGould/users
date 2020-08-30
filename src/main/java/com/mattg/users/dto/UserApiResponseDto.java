@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserFileDto {
+public class UserApiResponseDto {
 
     private long id;
 
