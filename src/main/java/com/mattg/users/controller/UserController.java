@@ -7,6 +7,7 @@ import com.mattg.users.entites.User;
 import com.mattg.users.mapper.UserFileDtoToUserEntityMapper;
 import com.mattg.users.repository.UserRepository;
 import com.mattg.users.service.FileService;
+import com.mattg.users.service.InitialDataLoadService;
 import com.mattg.users.service.UserApiResultsService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.slf4j.Logger;
@@ -29,7 +30,7 @@ public class UserController {
     private UserApiResultsService userApiResultsService;
 
     @Autowired
-    private FileService fileService;
+    private InitialDataLoadService initialDataLoadService;
 
     @Autowired
     private UserFileDtoToUserEntityMapper mapper;
@@ -61,12 +62,12 @@ public class UserController {
         LOGGER.info("entering /loadData");
 
         try {
-            List<UserFileDto> userFileDtoList = fileService.loadFromFile();
+            List<UserFileDto> userFileDtoList = initialDataLoadService.loadFromStaticString();
             List<User> userEntities = mapper.mapObjects(userFileDtoList);
             userRepository.saveAll(userEntities);
         } catch (IOException e) {
             LOGGER.error("Error loading data", e);
-            return "error laoding data";
+            return "error loading data";
         }
 
         return "Done";
