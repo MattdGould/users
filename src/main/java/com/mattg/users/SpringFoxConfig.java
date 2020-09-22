@@ -12,15 +12,15 @@ import org.springframework.context.annotation.Configuration;
 public class SpringFoxConfig {
 
     @Bean
-    public OpenAPI springShopOpenAPI() {
+    public OpenAPI springUsersOpenAPI() {
         return new OpenAPI()
-                .info(new Info().title("SpringShop API")
-                        .description("Spring shop sample application")
+                .info(new Info().title("MattG Spring Users API")
+                        .description("MattG Spring User API application")
                         .version("v0.0.1")
                         .license(new License().name("Apache 2.0").url("http://springdoc.org")))
                 .externalDocs(new ExternalDocumentation()
-                        .description("SpringShop Wiki Documentation")
-                        .url("https://springshop.wiki.github.org/docs"));
+                        .description("MattG Spring Users API Wiki Documentation")
+                        .url("https://github.com/MattdGould/users-api/blob/develop/README.md"));
     }
 
 }

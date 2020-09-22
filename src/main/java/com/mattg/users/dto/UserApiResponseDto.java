@@ -8,6 +8,7 @@ import java.util.Objects;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserApiResponseDto {
 
+    @JsonProperty("ID")
     private long id;
 
     @JsonProperty("first_name")
@@ -17,7 +18,7 @@ public class UserApiResponseDto {
     private String lastName;
     private String email;
 
-    @JsonProperty("ip_address")
+    @JsonProperty("ip_adres")
     private String ipAddress;
     private Double latitude;
     private Double longitude;

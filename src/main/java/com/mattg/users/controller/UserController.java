@@ -2,11 +2,9 @@ package com.mattg.users.controller;
 
 import com.mattg.users.dto.UserApiResponseDto;
 import com.mattg.users.dto.UserFileDto;
-import com.mattg.users.dto.UserResponseDto;
 import com.mattg.users.entites.User;
 import com.mattg.users.mapper.UserFileDtoToUserEntityMapper;
 import com.mattg.users.repository.UserRepository;
-import com.mattg.users.service.FileService;
 import com.mattg.users.service.InitialDataLoadService;
 import com.mattg.users.service.UserApiResultsService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -47,7 +45,7 @@ public class UserController {
         return responseDtos;
     }
 
-    @Operation(summary = "Finds all users with given id")
+    @Operation(summary = "Finds user with given id")
     @GetMapping(value = "/users/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public UserApiResponseDto getUserWithId(@PathVariable(value = "id") String id) {
         LOGGER.info("entering /users/{id}");
